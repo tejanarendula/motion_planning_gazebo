@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: urdF_description
+    relative_path: urdf/shobot.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/shobot.srdf
+  CONFIG:
+    author_name: shobot
+    author_email: shobot@shobot.com
+    generated_timestamp: 1711952396

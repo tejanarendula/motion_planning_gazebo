@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<robot name="URDF_FUSION_DESIGN" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find URDF_FUSION_DESIGN_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find URDF_FUSION_DESIGN_description)/urdf/URDF_FUSION_DESIGN.trans" />
+<xacro:include filename="$(find URDF_FUSION_DESIGN_description)/urdf/URDF_FUSION_DESIGN.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.05451667822483152 -0.44716275709055486 0.6076047283959022" rpy="0 0 0"/>
+    <mass value="83.3823714639722"/>
+    <inertia ixx="20.723972" iyy="20.014745" izz="5.360208" ixy="-0.003337" iyz="-0.906102" ixz="-0.057011"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Drive_Wheel_Left_1">
+  <inertial>
+    <origin xyz="-0.007265756217933461 2.2006660527207345e-07 -6.916256860278747e-08" rpy="0 0 0"/>
+    <mass value="0.809911055829241"/>
+    <inertia ixx="0.00231" iyy="0.001323" izz="0.001323" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.267008 0.474564 -0.076538" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Drive_Wheel_Left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.267008 0.474564 -0.076538" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Drive_Wheel_Left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Caster_Front_Left_1">
+  <inertial>
+    <origin xyz="-0.0028294352152516966 2.2006676780872425e-07 -6.916262318759636e-08" rpy="0 0 0"/>
+    <mass value="0.0656274809760018"/>
+    <inertia ixx="2.2e-05" iyy="1.6e-05" izz="1.6e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.262475 0.734864 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Front_Left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.262475 0.734864 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Front_Left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Caster_Back_Left_1">
+  <inertial>
+    <origin xyz="-0.002829435215370102 2.200667604534967e-07 -6.916262318759636e-08" rpy="0 0 0"/>
+    <mass value="0.0656274809760018"/>
+    <inertia ixx="2.2e-05" iyy="1.6e-05" izz="1.6e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.262475 0.214264 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Back_Left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.262475 0.214264 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Back_Left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Caster_Back_Right_1">
+  <inertial>
+    <origin xyz="0.002830078645346318 2.2006657171558253e-07 -6.916262318759636e-08" rpy="0 0 0"/>
+    <mass value="0.0656274809760018"/>
+    <inertia ixx="2.2e-05" iyy="1.6e-05" izz="1.6e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.15846 0.214264 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Back_Right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.15846 0.214264 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Back_Right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Drive_Wheel_Right_1">
+  <inertial>
+    <origin xyz="0.0072653996481467364 2.2006665967300165e-07 -6.916256820033162e-08" rpy="0 0 0"/>
+    <mass value="0.8099110558292425"/>
+    <inertia ixx="0.00231" iyy="0.001323" izz="0.001323" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.162992 0.474564 -0.076538" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Drive_Wheel_Right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.162992 0.474564 -0.076538" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Drive_Wheel_Right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Caster_Front_Right_1">
+  <inertial>
+    <origin xyz="0.0028300786454646953 2.2006676769770195e-07 -6.916262318759636e-08" rpy="0 0 0"/>
+    <mass value="0.0656274809760018"/>
+    <inertia ixx="2.2e-05" iyy="1.6e-05" izz="1.6e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.15846 0.734864 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Front_Right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.15846 0.734864 -0.026938" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://URDF_FUSION_DESIGN_description/meshes/Caster_Front_Right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 13" type="continuous">
+  <origin xyz="0.267008 -0.474564 0.076538" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Drive_Wheel_Left_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 14" type="continuous">
+  <origin xyz="0.262475 -0.734864 0.026938" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Caster_Front_Left_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 16" type="continuous">
+  <origin xyz="0.262475 -0.214264 0.026938" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Caster_Back_Left_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 17" type="continuous">
+  <origin xyz="-0.15846 -0.214264 0.026938" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Caster_Back_Right_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 18" type="continuous">
+  <origin xyz="-0.162992 -0.474564 0.076538" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Drive_Wheel_Right_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 19" type="continuous">
+  <origin xyz="-0.15846 -0.734864 0.026938" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Caster_Front_Right_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+</robot>

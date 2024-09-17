@@ -1,0 +1,106 @@
+# Publish joint_states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+  
+ur5_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - shoulder_pan_joint
+    - shoulder_lift_joint
+    - elbow_joint
+    - wrist_1_joint
+    - wrist_2_joint
+    - wrist_3_joint
+  constraints:
+      shoulder_pan_joint: {trajectory: 0.1, goal: 0.005}
+      shoulder_lift_joint: {trajectory: 0.1, goal: 0.005}
+      elbow_joint: {trajectory: 0.1, goal: 0.005}
+      wrist_1_joint: {trajectory: 0.1, goal: 0.005}
+      wrist_2_joint: {trajectory: 0.1, goal: 0.005}
+      wrist_3_joint: {trajectory: 0.1, goal: 0.005}
+  gains:
+    shoulder_pan_joint: {p: 4000,  d: 200, i: 1, i_clamp: 1}
+      # p: 1000
+      # d: 50
+      # i: 10
+      # i_clamp: 100
+    shoulder_lift_joint: {p: 10000,  d: 200, i: 1, i_clamp: 1}
+      # p: 5000
+      # d: 30
+      # i: 100
+      # i_clamp: 400
+    elbow_joint: {p: 2000,  d: 20, i: 1, i_clamp: 1}
+      # p: 5000
+      # d: 50
+      # i: 10
+      # i_clamp: 100
+    wrist_1_joint: {p: 500,  d: 1, i: 1, i_clamp: 1}
+      # p: 200
+      # d: 20
+      # i: 10
+      # i_clamp: 100
+    wrist_2_joint: {p: 500,  d: 1, i: 1, i_clamp: 1}
+      # p: 100
+      # d: 10
+      # i: 0.1
+      # i_clamp: 100
+    wrist_3_joint: {p: 10,  d: 0.1, i: 0, i_clamp: 1}
+      # p: 10
+      # d: 1
+      # i: 0.1
+      # i_clamp: 100
+ur5_arm_pos_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - shoulder_pan_joint
+    - shoulder_lift_joint
+    - elbow_joint
+    - wrist_1_joint
+    - wrist_2_joint
+    - wrist_3_joint
+  gains:
+    shoulder_pan_joint:
+      p: 3000
+      d: 300
+      i: 0.2
+      i_clamp: 10
+    shoulder_lift_joint:
+      p: 3000
+      d: 300
+      i: 0.2
+      i_clamp: 10
+    elbow_joint:
+      p: 6000
+      d: 250
+      i: 3
+      i_clamp: 100
+    wrist_1_joint:
+      p: 1500
+      d: 100
+      i: 0.7
+      i_clamp: 1
+    wrist_2_joint:
+      p: 1000
+      d: 50
+      i: 0.7
+      i_clamp: 5
+    wrist_3_joint:
+      p: 1000
+      d: 75
+      i: 0.7
+      i_clamp: 5
+
+gripper:
+    action_ns: gripper_action
+    type: effort_controllers/GripperActionController
+    default: True
+    joints:
+      - gripper_joint
+      - gripper_joint1
+      - gripper_joint2
+      - gripper_joint3
+      - gripper_joint4
+      - gripper_joint5
+      - gripper_joint6
+      - gripper_joint7

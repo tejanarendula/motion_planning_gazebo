@@ -1,0 +1,18 @@
+<launch>
+  <arg name="model" default="shobot" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+
+  <include file="$(find shobot)/industrial-warehouse/shobot_ware.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find shobot)/urdf/m2wr.xacro" />
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model shobot -x 0 -y 0 -z 0 -param robot_description" />
+</launch>

@@ -1,0 +1,48 @@
+Transformed coordinates in base_link frame:
+x: 0.841012, y: 0.480201, z: -0.049178
+
+Transformed coordinates in base_link frame:
+x: 0.878936, y: 0.493266, z: -0.021773
+
+Transformed coordinates in base_link frame:
+x: 0.889914, y: 0.475632, z: 0.224945
+
+Transformed coordinates in base_link frame:
+x: 0.965538, y: 0.357313, z: 0.439583
+
+Transformed coordinates in base_link frame:
+x: 0.980053, y: 0.147829, z: 0.625888
+
+Transformed coordinates in base_link frame:
+x: 0.854522, y: 0.179237, z: 0.856907
+
+Transformed coordinates in base_link frame:
+x: 0.700408, y: 0.132428, z: 1.018506
+
+Transformed coordinates in base_link frame:
+x: 0.633328, y: 0.096706, z: 1.106831
+
+Transformed coordinates in base_link frame:
+x: 0.380785, y: 0.202702, z: 1.201916
+
+Transformed coordinates in base_link frame:
+x: 0.329866, y: 0.227951, z: 1.221455
+
+Transformed coordinates in base_link frame:
+x: 0.018333, y: 0.534291, z: 1.168683
+
+Transformed coordinates in base_link frame:
+x: -0.032153, y: 0.646636, z: 1.080239
+
+Transformed coordinates in base_link frame:
+x: -0.108133, y: 0.740537, z: 1.029140
+
+Transformed coordinates in base_link frame:
+x: -0.183954, y: 0.936999, z: 0.833948
+
+Transformed coordinates in base_link frame:
+x: -0.084995, y: 1.045588, z: 0.646670
+
+Transformed coordinates in base_link frame:
+x: 0.033689, y: 1.114279, z: 0.460998
+

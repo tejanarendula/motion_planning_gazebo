@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+      <!-- Start Gazebo with your world file -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find moveit_config)/worlds/arena_person.world"/>
+  </include>
+</launch>

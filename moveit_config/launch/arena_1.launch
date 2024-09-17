@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gazebo_gui" default="true" doc="Start Gazebo GUI"/>
+  <arg name="world_pose" default="-x 0.0 -y 0.0 -z 0 -R 0 -P 0 -Y 0" doc="Pose to spawn the robot at"/>
+    
+  <!-- specify the planning pipeline -->
+  <arg name="pipeline" default="ompl" doc="Planning pipeline to use with MoveIt"/>
+
+    <!-- Start Gazebo with your world file -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find moveit_config)/worlds/arena_person.world"/>
+  </include>
+
+  <!-- Load your URDF file onto the ROS parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find moveit_config)/config/gazebo_shobot.urdf"/>
+
+  <!-- Spawn your robot in Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model shobot $(arg world_pose)" respawn="false" output="screen"/>
+
+  <!-- Joint state controller -->
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller"/>
+
+  <!-- Load the controller parameters onto the parameter server -->
+  <rosparam file="$(find moveit_config)/config/ros_controllers.yaml" command="load"/>
+  <rosparam file="$(find moveit_config)/config/gazebo_controllers.yaml" command="load"/>
+  
+  <!-- Load additional controllers using the ros_control controller manager -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+     args="ur5_arm_controller"/>
+   
+  <!-- Given the published joint states, publish TF for the robot links -->
+  <node name="tf_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <!-- Launch MoveIt -->
+  <include file="$(dirname)/demo.launch" pass_all_args="true">
+    <!-- robot_description is loaded by gazebo.launch, to enable Gazebo features -->
+    <arg name="load_robot_description" value="false" />
+    <arg name="moveit_controller_manager" value="ros_control" />
+  </include>
+</launch>

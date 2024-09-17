@@ -1,0 +1,22 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find shobot)/urdf/m2wr.xacro use_nominal_extrinsics:=true publish_pointcloud:=true add_plug:=false name:=realsense topics_ns:=camera" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node>
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model shobot -x 0 -y 0 -z 0 -param robot_description" />
+
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+</launch>
